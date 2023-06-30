@@ -1,0 +1,145 @@
+// C++ code to delete middle of a stack with iterative method
+#include <bits/stdc++.h>
+using namespace std;
+
+// Deletes middle of stack of size n. Curr is current item number
+void deleteMid(stack<char>& st)
+{
+	int n = st.size();
+	stack<char> tempSt;
+	int count = 0;
+	
+	// Put first n/2 element of st in tempSt
+	while (count < n / 2) {
+		char c = st.top();
+		st.pop();
+		tempSt.push(c);
+		count++;
+	}
+	
+	// Delete middle element
+	st.pop();
+	
+	// Put all (n/2) element of tempSt in st
+	while (!tempSt.empty()) {
+		st.push(tempSt.top());
+		tempSt.pop();
+	}
+}
+
+// Driver Code
+int main()
+{
+	stack<char> st;
+
+	// Push elements into the stack
+	st.push('1');
+	st.push('2');
+	st.push('3');
+	st.push('4');
+	st.push('5');
+	st.push('6');
+	st.push('7');
+
+	deleteMid(st);
+
+	// Printing stack after deletion of middle.
+	while (!st.empty()) {
+		char p = st.top();
+		st.pop();
+		cout << p << " ";
+	}
+	return 0;
+}
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	stack<char> st;
+	st.push('1');
+	st.push('2');
+	st.push('3');
+	st.push('4');
+	st.push('5');
+	st.push('6');
+	st.push('7');
+	vector<char>v;
+	while(!st.empty()){
+	v.push_back(st.top());
+	st.pop();
+	}
+	int n=v.size();
+	if(n%2==0){
+	int target=(n/2);
+	for(int i=0;i<n;i++){
+		if(i==target)continue;
+		st.push(v[i]);
+	}
+	}else{
+	int target=ceil(n/2);
+	for(int i=0;i<n;i++){
+		if(i==target)continue;
+		st.push(v[i]);
+	}
+	}
+	cout<<"Printing stack after deletion of middle: ";
+	while (!st.empty()) {
+		char p = st.top();
+		st.pop();
+		cout << p << " ";
+	}
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+'#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	stack<char> st;
+	st.push('1');
+	st.push('2');
+	st.push('3');
+	st.push('4');
+	st.push('5');
+	st.push('6');
+	st.push('7');
+	vector<char>v;
+	while(!st.empty()){
+	v.push_back(st.top());
+	st.pop();
+	}
+	int n=v.size();
+	if(n%2==0){
+	int target=(n/2);
+	for(int i=0;i<n;i++){
+		if(i==target)continue;
+		st.push(v[i]);
+	}
+	}else{
+	int target=ceil(n/2);
+	for(int i=0;i<n;i++){
+		if(i==target)continue;
+		st.push(v[i]);
+	}
+	}
+	cout<<"Printing stack after deletion of middle: ";
+	while (!st.empty()) {
+		char p = st.top();
+		st.pop();
+		cout << p << " ";
+	}
+	return 0;
+}
+
